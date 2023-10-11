@@ -1,0 +1,138 @@
+Foreign key::
+
+Foreign Key Reference Other Table primary key.
+
+                                        : Stntex :
+
+FOREIGN KEY < Column name 2 > 
+REFERENCES <  TABLE NAME ( COLUMN NAME 1) > ;
+
+                                  : CASCADE SYNTEX :
+
+FOREIGN KEY < Column name 2 > 
+REFERENCES <  TABLE NAME ( COLUMN NAME 1) > 
+ON UPDATE CASCADE 
+ON DELETE CASCADE ;
+
+ALRTER :::
+
+
+
+                                                     ADD COLIMN :::::
+ALTER TABLE Student
+ADD column Age INT NOT NULL DEFAULT 19;
+ 
+                                                     RENAME COLUMN ::::::
+
+ALTER TABLE Student
+CHANGE  Age st_age INT NOT NULL;
+                                                             
+                                                       RENAME COLUMN ::::::
+ALTER TABLE Student
+RENAME   TO  Students;     
+
+
+                                                 JOIN:::::::::::
+
+
+ >> INNER JOIN -   Return the record that have been match values  both tables.
+
+SELECT  Column(s)
+FROM Table A
+INNER JOIN  Table B
+ON Table A.Column _name = Table B.Column_ Name ;
+
+ >> LEFT JOIN - Return  all the record  from Left table and match the record from Right table.
+
+
+SELECT  Column(s)
+FROM Table A
+LEFT  JOIN  Table B
+ON Table A.Column _name = Table B.Column_ Name ; 
+
+>LEFT EXCLUSIVE JOIN :::
+
+SELECT  Column(s)
+FROM Table A
+LEFT  JOIN  Table B
+ON Table A.Column _name = Table B.Column_ Name  
+WHERE  Table B.Column_ Name IS NOT NULL; 
+
+
+ >> RIGHT JOIN - Return  all the record  from Right  table and match the record from Left table.
+
+SELECT  Column(s)
+FROM Table B
+RIGHT   JOIN  Table A
+ON Table A.Column _name = Table B.Column_ Name ; 
+
+>RIGHT EXCLUSIVE JOIN ::::
+
+SELECT  Column(s)
+FROM Table A
+LEFT  JOIN  Table B
+ON Table A.Column _name = Table B.Column_ Name  
+WHERE  Table B.Column_ Name IS NOT NULL; 
+
+
+>> FULL JOIN - Return all the records when there is a match either right or Left table 
+
+SELECT  Column(s)
+FROM Table A
+LEFT  JOIN  Table B
+ON Table A.Column _name = Table B.Column_ Name ; 
+
+UNION
+
+SELECT  Column(s)
+FROM Table B
+RIGHT   JOIN  Table A
+ON Table A.Column _name = Table B.Column_ Name ; 
+
+
+>>SELF JOIN :::::
+
+SELECT a.name as  Manager_name ,b.name
+FROM Employees as a
+join Employees as b
+ON a.Id = b.Manager_Id;
+
+>>>>>>> UNION ::::::
+
+It is use to combine the result -set of two or more SELECT statement.
+also give the unique key.
+
+SELECT * FROM Student
+UNION
+SELECT * FROM Course ;
+
+>>>>>UNION ALL :::::
+
+Give the Duplicate value ....
+
+SELECT * FROM Student
+UNION ALL
+SELECT * FROM Course ;
+ 
+>>>>SUB-QUERY :::
+Nasted Query or Sub query is a query within another sub-query..
+
+SELECT Column(s)
+FROM Table 
+WHERE Col_Name Oparator
+(Subquery);
+
+
+>>>>>>>>>>>>SQLVIEW:::::
+
+SQL_VIEW is the virtual table based on the result -set of Sql statement.
+
+SELECT * FROM  View 1  .
+SELECT VIEW  View 1 AS
+SELECT  Roll number , name  FROM Student ;
+
+
+
+
+
+
